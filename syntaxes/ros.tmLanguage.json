@@ -1,0 +1,54 @@
+{
+    "name": "rosDSL",
+    "scopeName": "source.ros",
+    "fileTypes": [
+        "ros"
+    ],
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "name": "storage.type.ros",
+            "match": "\\b(PackageSet|Package|Artifact|CatkinPackage|AmentPackage|Package|FromGitRepo|Node|Publisher|Subscriber|ServiceClient|ServiceServer|ActionClient|ActionServer|Publishers|Subscribers|ServiceClients|ServiceServers|ActionClients|ActionServers|TopicSpec|ServiceSpec|Parameter|Parameters|Specs)\\b"
+        },
+        {
+            "name": "string.quoted.double.ros",
+            "begin": "\"",
+            "end": "\""
+        }
+
+    ],    
+    "repository": 
+        {
+            "comments": {
+                "patterns": [
+                    {
+                        "name": "comment.block.states",
+                        "begin": "/\\*",
+                        "beginCaptures": {
+                            "0": {
+                                "name": "punctuation.definition.comment.states"
+                            }
+                        },
+                        "end": "\\*/",
+                        "endCaptures": {
+                            "0": {
+                                "name": "punctuation.definition.comment.states"
+                            }
+                        }
+                    }, {
+                        "begin": "(^\\s+)?(?=//)",
+                        "beginCaptures": {
+                            "1": {
+                                "name": "punctuation.whitespace.comment.leading.cs"
+                            }
+                        },
+                        "end": "(?=$)",
+                        "name":"comment.line.states"
+                    }
+                ]
+            }
+        }
+} 
+

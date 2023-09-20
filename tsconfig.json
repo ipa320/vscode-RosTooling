@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "experimentalDecorators": true,
+        "noUnusedLocals": true,
+        "emitDecoratorMetadata": true,
+        "downlevelIteration": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es6",
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "sourceMap": true,
+        "rootDir": "src",
+        "outDir": "lib",
+        "skipLibCheck": true,
+        "checkJs": false
+    },
+    "include": [
+        "src", "@types/three"
+    ],
+	"exclude": [
+		"node_modules"
+	]
+}

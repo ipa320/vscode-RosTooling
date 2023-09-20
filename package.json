@@ -1,0 +1,79 @@
+{
+  "name": "ros",
+  "displayName": "ros",
+  "description": "ros language support",
+  "version": "0.0.0",
+  "publisher": "ipa-nhg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ipa-nhg/vscode-rostooling"
+  },
+  "engines": {
+    "vscode": "^1.49.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:ros"
+  ],
+  "main": "lib/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "ros",
+        "aliases": [
+          "ros"
+        ],
+        "extensions": [
+          ".ros"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ros",
+        "scopeName": "source.ros",
+        "path": "./syntaxes/ros.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "ros.openPreview",
+        "title": "Open ros components preview window",
+        "category": "Ros",
+        "when": "editorLangId == ros"
+      }
+    ]
+  },
+  "scripts": {
+    "prepublish": "tsc -p .",
+    "compile": "tsc -p .",
+    "watch": "tsc -w -p .",
+    "update-vscode": "node ./node_modules/vscode/bin/install",
+    "build-viewer": "webpack --mode=production --config ./src/urdf/webpack.config.js",
+    "antlr4ts": "antlr4ts -visitor src/parser/DebugInternalroscomponents.g",
+    "build": "tsc -p ."
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.49.0",
+    "ts-loader": "^8.0.4",
+    "typescript": "^4.5.5",
+    "vscode": "^1.1.37",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "@types/roslib": "^1.1.8",
+    "@types/three": "^0.137.0",
+    "antlr4ts": "^0.5.0-alpha.4",
+    "assert": "^2.0.0",
+    "grunt-cli": "^1.4.3",
+    "resolve-cwd": "^3.0.0",
+    "roslib": "latest",
+    "three": "latest",
+    "util": "^0.12.4",
+    "vscode-languageclient": "^7.0.0",
+    "webpack": "^5.76.1"
+  }
+}

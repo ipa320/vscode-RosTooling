@@ -1,12 +1,12 @@
 {
-  "name": "ros",
-  "displayName": "ros",
-  "description": "ros language support",
+  "name": "ros1",
+  "displayName": "ros1",
+  "description": "ros1 language support",
   "version": "0.0.0",
   "publisher": "ipa-nhg",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ipa-nhg/vscode-rostooling"
+    "url": "https://github.com/ipa-nhg/vscode-ros1tooling"
   },
   "engines": {
     "vscode": "^1.49.0"
@@ -15,35 +15,27 @@
     "Programming Languages"
   ],
   "activationEvents": [
-    "onLanguage:ros"
+    "onLanguage:ros1"
   ],
-  "main": "lib/extension.js",
+  "main": "out/extension",
   "contributes": {
     "languages": [
       {
-        "id": "ros",
+        "id": "ros1",
         "aliases": [
-          "ros"
+          "ros1"
         ],
         "extensions": [
-          ".ros"
+          ".ros1"
         ],
         "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
-        "language": "ros",
-        "scopeName": "source.ros",
-        "path": "./syntaxes/ros.tmLanguage.json"
-      }
-    ],
-    "commands": [
-      {
-        "command": "ros.openPreview",
-        "title": "Open ros components preview window",
-        "category": "Ros",
-        "when": "editorLangId == ros"
+        "language": "ros1",
+        "scopeName": "source.ros1",
+        "path": "./syntaxes/ros1.tmLanguage.json"
       }
     ]
   },
@@ -53,7 +45,7 @@
     "watch": "tsc -w -p .",
     "update-vscode": "node ./node_modules/vscode/bin/install",
     "build-viewer": "webpack --mode=production --config ./src/urdf/webpack.config.js",
-    "antlr4ts": "antlr4ts -visitor src/parser/DebugInternalroscomponents.g",
+    "antlr4ts": "antlr4ts -visitor src/parser/DebugInternalros1components.g",
     "build": "tsc -p ."
   },
   "devDependencies": {
@@ -64,13 +56,11 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "@types/roslib": "^1.1.8",
     "@types/three": "^0.137.0",
     "antlr4ts": "^0.5.0-alpha.4",
     "assert": "^2.0.0",
     "grunt-cli": "^1.4.3",
     "resolve-cwd": "^3.0.0",
-    "roslib": "latest",
     "three": "latest",
     "util": "^0.12.4",
     "vscode-languageclient": "^7.0.0",

@@ -12,9 +12,9 @@
             "es6",
             "dom"
         ],
-        "sourceMap": true,
+        "sourceMap": false,
         "rootDir": "src",
-        "outDir": "lib",
+        "outDir": "out",
         "skipLibCheck": true,
         "checkJs": false
     },

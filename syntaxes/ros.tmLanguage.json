@@ -1,54 +1,37 @@
 {
-    "name": "rosDSL",
-    "scopeName": "source.ros",
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "ros1DSL",
+    "scopeName": "source.ros1",
     "fileTypes": [
-        "ros"
+        "ros1"
     ],
-    "patterns": [
-        {
-            "include": "#comments"
-        },
-        {
-            "name": "storage.type.ros",
-            "match": "\\b(PackageSet|Package|Artifact|CatkinPackage|AmentPackage|Package|FromGitRepo|Node|Publisher|Subscriber|ServiceClient|ServiceServer|ActionClient|ActionServer|Publishers|Subscribers|ServiceClients|ServiceServers|ActionClients|ActionServers|TopicSpec|ServiceSpec|Parameter|Parameters|Specs)\\b"
-        },
-        {
-            "name": "string.quoted.double.ros",
-            "begin": "\"",
-            "end": "\""
-        }
-
-    ],    
-    "repository": 
-        {
-            "comments": {
-                "patterns": [
-                    {
-                        "name": "comment.block.states",
-                        "begin": "/\\*",
-                        "beginCaptures": {
-                            "0": {
-                                "name": "punctuation.definition.comment.states"
-                            }
-                        },
-                        "end": "\\*/",
-                        "endCaptures": {
-                            "0": {
-                                "name": "punctuation.definition.comment.states"
-                            }
-                        }
-                    }, {
-                        "begin": "(^\\s+)?(?=//)",
-                        "beginCaptures": {
-                            "1": {
-                                "name": "punctuation.whitespace.comment.leading.cs"
-                            }
-                        },
-                        "end": "(?=$)",
-                        "name":"comment.line.states"
-                    }
-                ]
-            }
-        }
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],  
+    "repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.ros1",
+				"match": "\\b(msgs|message)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.ros1",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ros1",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.ros1"
 } 
 

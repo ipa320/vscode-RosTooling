@@ -1,9 +1,9 @@
 {
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-    "name": "ros1DSL",
-    "scopeName": "source.ros1",
+    "name": "rosDSL",
+    "scopeName": "source.ros",
     "fileTypes": [
-        "ros1"
+        "ros"
     ],
 	"patterns": [
 		{
@@ -16,17 +16,17 @@
     "repository": {
 		"keywords": {
 			"patterns": [{
-				"name": "keyword.control.ros1",
+				"name": "keyword.control.ros",
 				"match": "\\b(msgs|message)\\b"
 			}]
 		},
 		"strings": {
-			"name": "string.quoted.double.ros1",
+			"name": "string.quoted.double.ros",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.ros1",
+					"name": "constant.character.escape.ros",
 					"match": "\\\\."
 				}
 			]

@@ -1,12 +1,12 @@
 {
-  "name": "ros1",
-  "displayName": "ros1",
-  "description": "ros1 language support",
+  "name": "ros",
+  "displayName": "ros",
+  "description": "ros language support",
   "version": "0.0.0",
   "publisher": "ipa-nhg",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ipa-nhg/vscode-ros1tooling"
+    "url": "https://github.com/ipa-nhg/vscode-rostooling"
   },
   "engines": {
     "vscode": "^1.49.0"
@@ -15,27 +15,27 @@
     "Programming Languages"
   ],
   "activationEvents": [
-    "onLanguage:ros1"
+    "onLanguage:ros"
   ],
   "main": "out/extension.js",
   "contributes": {
     "languages": [
       {
-        "id": "ros1",
+        "id": "ros",
         "aliases": [
-          "ros1"
+          "ros"
         ],
         "extensions": [
-          ".ros1"
+          ".ros"
         ],
         "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
-        "language": "ros1",
-        "scopeName": "source.ros1",
-        "path": "./syntaxes/ros1.tmLanguage.json"
+        "language": "ros",
+        "scopeName": "source.ros",
+        "path": "./syntaxes/ros.tmLanguage.json"
       }
     ]
   },
@@ -45,7 +45,7 @@
     "watch": "tsc -w -p .",
     "update-vscode": "node ./node_modules/vscode/bin/install",
     "build-viewer": "webpack --mode=production --config ./src/urdf/webpack.config.js",
-    "antlr4ts": "antlr4ts -visitor src/parser/DebugInternalros1components.g",
+    "antlr4ts": "antlr4ts -visitor src/parser/DebugInternalroscomponents.g",
     "build": "tsc -p ."
   },
   "devDependencies": {

@@ -42,7 +42,7 @@ export function activate(context: ExtensionContext) {
     };
     
     let clientOptions: LanguageClientOptions = {
-        documentSelector: ['ros1'],
+        documentSelector: ['ros'],
         synchronize: {
             fileEvents: workspace.createFileSystemWatcher('**/*.*')
         }
@@ -53,14 +53,14 @@ export function activate(context: ExtensionContext) {
 
     var disposable = lc.start();
     /**
-    var disposable2 =commands.registerCommand("ros1.a.proxy", async () => {
+    var disposable2 =commands.registerCommand("ros.a.proxy", async () => {
         let activeEditor = window.activeTextEditor;
-        if (!activeEditor || !activeEditor.document || activeEditor.document.languageId !== 'ros1') {
+        if (!activeEditor || !activeEditor.document || activeEditor.document.languageId !== 'ros') {
             return;
         }
 
         if (activeEditor.document.uri instanceof Uri) {
-            commands.executeCommand("ros1.a", activeEditor.document.uri.toString());
+            commands.executeCommand("ros.a", activeEditor.document.uri.toString());
         }
     })*/
 
